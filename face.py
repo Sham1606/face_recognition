@@ -2,9 +2,9 @@ import threading
 import cv2
 from deepface import DeepFace
 
-cap = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # here in the first parameter refers to camera
-cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
-cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
+capture = cv2.VideoCapture(0, cv2.CAP_DSHOW)  # here in the first parameter refers to camera
+capture.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+capture.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
 counter = 0
 
@@ -24,7 +24,7 @@ def check_face(frame):
         face_match = False
 
 while True:
-    ret, frame = cap.read()
+    ret, frame = capture.read()
 
     if ret:
         if counter % 30 == 0:
